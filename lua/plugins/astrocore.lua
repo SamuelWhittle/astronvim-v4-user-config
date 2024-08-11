@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -66,6 +64,8 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        [",rename"] = { "gg0<c-v>GI\"<Esc>gg$<c-v>G$A\" <Esc>gg0<c-v>G$ygg0P<Esc>gg0<c-v>GImv <Esc>",
+          desc = "Rename everything" }
       },
     },
   },
