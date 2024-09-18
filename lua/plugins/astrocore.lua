@@ -25,7 +25,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
@@ -65,7 +65,9 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
         [",rename"] = { "gg0<c-v>GI\"<Esc>gg$<c-v>G$A\" <Esc>gg0<c-v>G$ygg0P<Esc>gg0<c-v>GImv <Esc>",
-          desc = "Rename everything" }
+          desc = "Rename everything" },
+        [",jq"] = { ":silent%!jq<CR>:set syntax=json<CR>", desc = "Parse and view json" },
+        [",jc"] = { ":silent%!jq -c<CR>:set syntax=json<CR>", desc = "Compress JSON" },
       },
     },
   },
